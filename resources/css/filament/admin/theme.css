@@ -1,0 +1,38 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@source "../../../../vendor/relaticle/flowforge/resources/views/**/*.blade.php";
+
+
+/* 1. Column's own scroll — remove it (from before) */
+.flowforge-column-content {
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+}
+
+/* 2. Column wrapper — stop clipping vertically */
+.flowforge-column {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* 3. The row holding all columns — keep horizontal scroll, drop the vertical clip */
+.flex.flex-row.overflow-x-auto.overflow-y-hidden {
+    overflow-y: visible !important;
+    height: auto !important;
+}
+
+/* 4. Outer board wrapper — stop clipping, let content grow naturally */
+.flex-1.overflow-hidden.h-full {
+    overflow: visible !important;
+    height: auto !important;
+    padding-bottom: 1rem !important;
+}
+
+.flowforge-column-content > div.items-center.justify-center {
+    justify-content: flex-start !important;
+    padding-top: 1rem;
+}
